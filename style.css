@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.header-cat {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background: url("/assets/images/greencat.png") no-repeat right top;
+    background-size: cover;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.logo img {
+    height: 59px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    z-index: 3;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.header-main {
+    position: relative;
+    padding: 0px 0 140px;
+    margin-top: -100px;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 650px;
+}
+
+.header-left {
+    max-width: 480px;
+    margin-left: 80px;
+}
+
+.header-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: #111111;
+}
+
+.header-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: #111111;
+}
+
+.header-button {
+    font-family: 'Oswald', sans-serif;
+    display: inline-block;
+    padding: 16px 32px;
+    background-color: #68b738;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.header-button:hover {
+    background-color: #5ca52f;
+}
+
+.header-right {
+    min-height: 650px;
+}
+
+.product-food {
+    position: absolute;
+    bottom: 60px;
+    height: 499px;
+    left: 430px;
+    top: 100px;
+    width: 552px;
+    z-index: 5;
+
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.25));
+}
+
+.programs {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1220px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+/* Сетка карточек */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+}
+
+/* Карточка программы */
+.program-card {
+    background-color: #f2f2f2;
+    padding: 40px 50px 55px 50px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Заголовок с иконкой */
+.program-header {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+/* Иконки */
+.program-icon {
+    width: 100px;
+    height: 100px;
+    background-color: #68b738;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Иконка для похудения (Slim) */
+.program-icon--slim::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 50'%3E%3Cpath fill='white' d='M35,5 C25,5 15,15 15,30 C15,45 25,45 35,45 C45,45 55,45 55,30 C55,15 45,5 35,5 Z'/%3E%3Ccircle fill='white' cx='25' cy='25' r='5'/%3E%3Ccircle fill='white' cx='45' cy='25' r='5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* Иконка для набора массы (Pro) */
+.program-icon--pro::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 50'%3E%3Crect fill='white' x='15' y='15' width='40' height='25' rx='5'/%3E%3Ccircle fill='white' cx='25' cy='30' r='3'/%3E%3Ccircle fill='white' cx='45' cy='30' r='3'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.program-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111111;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.program-description {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444444;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+/* Ссылка каталога */
+.program-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111111;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+}
+
+.program-link:hover {
+    gap: 30px;
+}
+
+.program-link:hover .program-arrow {
+    transform: translateX(5px);
+}
+
+.program-arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    color: #68b738;
+}

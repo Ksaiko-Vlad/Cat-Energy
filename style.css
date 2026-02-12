@@ -170,7 +170,7 @@ body {
     max-width: 1220px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 0px;
 }
 
 .visually-hidden {
@@ -184,14 +184,12 @@ body {
     clip: rect(0 0 0 0);
 }
 
-/* Сетка карточек */
 .programs-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 80px;
 }
 
-/* Карточка программы */
 .program-card {
     background-color: #f2f2f2;
     padding: 40px 50px 55px 50px;
@@ -204,7 +202,6 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* Заголовок с иконкой */
 .program-header {
     display: flex;
     align-items: center;
@@ -212,7 +209,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* Иконки */
 .program-icon {
     width: 100px;
     height: 100px;
@@ -222,40 +218,38 @@ body {
     flex-shrink: 0;
 }
 
-/* Иконка для похудения (Slim) */
 .program-icon--slim::before {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70px;
-    height: 50px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 50'%3E%3Cpath fill='white' d='M35,5 C25,5 15,15 15,30 C15,45 25,45 35,45 C45,45 55,45 55,30 C55,15 45,5 35,5 Z'/%3E%3Ccircle fill='white' cx='25' cy='25' r='5'/%3E%3Ccircle fill='white' cx='45' cy='25' r='5'/%3E%3C/svg%3E");
+    height: 97px;
+    background-image: url("./assets/images/cat-slim.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
 
-/* Иконка для набора массы (Pro) */
 .program-icon--pro::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70px;
-    height: 50px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 50'%3E%3Crect fill='white' x='15' y='15' width='40' height='25' rx='5'/%3E%3Ccircle fill='white' cx='25' cy='30' r='3'/%3E%3Ccircle fill='white' cx='45' cy='30' r='3'/%3E%3C/svg%3E");
+    width: 134px;
+    height: 56px;
+    background-image: url("./assets/images/cat-pro.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
 
 .program-title {
-    font-family: 'Arial', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
     color: #111111;
     text-transform: uppercase;
     margin: 0;
@@ -264,22 +258,21 @@ body {
 
 .program-description {
     font-family: 'Arial', sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #444444;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #d9d9d9;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000;
+    padding-bottom: 30px;
+    
 }
 
-/* Ссылка каталога */
 .program-link {
     display: inline-flex;
     align-items: center;
     gap: 20px;
-    font-family: 'Arial', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
     color: #111111;
     text-transform: uppercase;
     text-decoration: none;
@@ -294,8 +287,63 @@ body {
     transform: translateX(5px);
 }
 
-.program-arrow {
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-    color: #68b738;
+.how {
+    padding: 20px 0;
+    background-color: #ffffff;
+}
+
+.how-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+.how-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+.how-item {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 40px;
+}
+
+.how-item > * {
+    position: relative;
+    z-index: 2;
+}
+
+.how-item::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 280px;
+    font-weight: 400;
+    line-height: 1;
+    color: #f2f2f2;
+    z-index: 0;
+}
+
+.how-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.how-description {
+z-index: 3;
 }

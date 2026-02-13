@@ -21,7 +21,7 @@ slider.addEventListener('input', function() {
 
 window.addEventListener('DOMContentLoaded', function() {
     slider.value = 0;
-    overlay.style.width = '0%';
-    divider.style.left = '0%';
+    overlay.style.width = '100%';
+    divider.style.left = '100%';
     divider.style.opacity = '0';
 });

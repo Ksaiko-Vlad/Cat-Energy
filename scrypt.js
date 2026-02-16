@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const burger = document.querySelector('.burger-menu');
     const nav = document.querySelector('.nav');
     
-    burger.innerHTML = `<img src="/assets/images/icon-burger.svg" alt="Меню" class="burger-icon">`;
+    burger.innerHTML = `<img src="./assets/images/icon-burger.svg" alt="Меню" class="burger-icon">`;
     
     burger.addEventListener('click', function() {
         burger.classList.toggle('active');
@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Меняем иконку
         if (burger.classList.contains('active')) {
-            burger.innerHTML = `<img src="/assets/images/icon-close.svg" alt="Закрыть" class="close-icon">`;
+            burger.innerHTML = `<img src="./assets/images/icon-close.svg" alt="Закрыть" class="close-icon">`;
         } else {
-            burger.innerHTML = `<img src="/assets/images/icon-burger.svg" alt="Меню" class="burger-icon">`;
+            burger.innerHTML = `<img src="./assets/images/icon-burger.svg" alt="Меню" class="burger-icon">`;
         }
     });
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             burger.classList.remove('active');
             nav.classList.remove('active');
             // Возвращаем иконку бургера
-            burger.innerHTML = `<img src="/assets/images/icon-burger.svg" alt="Меню" class="burger-icon">`;
+            burger.innerHTML = `<img src="./assets/images/icon-burger.svg" alt="Меню" class="burger-icon">`;
         });
     });
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (nav.classList.contains('active')) {
             burger.classList.remove('active');
             nav.classList.remove('active');
-            burger.innerHTML = `<img src="/assets/images/icon-burger.svg" alt="Меню" class="burger-icon">`;
+            burger.innerHTML = `<img src="./assets/images/icon-burger.svg" alt="Меню" class="burger-icon">`;
         }
     });
 });

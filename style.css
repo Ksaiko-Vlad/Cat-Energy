@@ -873,6 +873,12 @@ body {
         width: 100%;
         min-height: 400px;
         padding: 40px 50px 25px 50px;
+        transition: none;
+    }
+
+    .program-card:hover {
+        box-shadow: none;
+        transform: none;
     }
 
     .programs-grid {
@@ -1164,7 +1170,7 @@ body {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .nav {
         position: fixed;
@@ -1228,7 +1234,7 @@ body {
         right: -100%;
         width: 80%;
         max-width: 300px;
-        height: 83.5vh;
+        height: 91.3vh;
         background: white;
         transition: right 0.3s ease;
         z-index: 99;
@@ -1340,13 +1346,14 @@ body {
         padding: 10px 10px 10px 10px;
         min-height: 280px;
         position: relative;
-        transition: transform 0.3s ease;
+        transition: none;
     }
 
-    .program-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
+        .program-card:hover {
+            box-shadow: none;
+            transform: none;
+        }
+    
 
     .program-content-pro,
     .program-content-slim {

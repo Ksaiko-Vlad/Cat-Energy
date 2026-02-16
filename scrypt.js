@@ -35,31 +35,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
 const slider = document.getElementById('imageSlider');
 const overlay = document.getElementById('imageOverlay');
 const divider = document.getElementById('divider');
+const imageBefore = document.querySelector('.image-before');
 
 slider.addEventListener('input', function() {
     const value = this.value;
     
-    // Чем больше значение, тем больше видно кота до 
+    // Худой кот появляется через overlay
     overlay.style.width = value + '%';
-    divider.style.left = value + '%';
     
-    // Прячем разделитель в крайних положениях
-    if (value == 0) {
-        divider.style.opacity = '0';
-    } else if (value == 100) {
-        divider.style.opacity = '0';
-    } else {
-        divider.style.opacity = '1';
-    }
+    // Толстый кот становится прозрачным
+    imageBefore.style.opacity = 1 - (value / 100);
+    
+    divider.style.left = value + '%';
+    this.style.background = `linear-gradient(to right, #68b738 0%, #68b738 ${value}%, #ffffff ${value}%, #ffffff 100%)`;
+    
+    divider.style.opacity = (value == 0 || value == 100) ? '0' : '1';
 });
 
 window.addEventListener('DOMContentLoaded', function() {
-    slider.value = 0;
-    overlay.style.width = '100%';
-    divider.style.left = '100%';
+    slider.value = 0; 
+    overlay.style.width = '0%'; // Худой кот не виден
+    divider.style.left = '0%';
     divider.style.opacity = '0';
+    imageBefore.style.opacity = '1'; // Толстый кот виден полностью
+    
+    slider.style.background = 'linear-gradient(to right, #68b738 0%, #68b738 0%, #ffffff 0%, #ffffff 100%)';
 });
